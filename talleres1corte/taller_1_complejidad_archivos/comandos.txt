@@ -1,0 +1,105 @@
+
+#################################################################
+## Suma de los cuadrados de los primeros n numeros naturales   ##
+#################################################################
+
+## Compilacion ##
+
+g++ -std=c++17 suma_functions.cxx test_suma.cxx -o my_test_suma
+
+## Ejecucion automatica ##
+
+### LINUX, MAC o REPL.IT ###
+ 
+#empieza en 1 suma 1000 a sumar 1000 continúa sin superar 65535
+#for i in: crea un ciclo y guarda cada valor en la variable i.
+#$(seq 1 1000 65535): genera una secuencia que comienza en 1, aumenta de 1000 en 1000 y llega hasta el mayor valor posible sin superar 65535.
+#do: indica el comienzo de las instrucciones que se repetirán.
+#./my_test_suma $i 2: ejecuta el programa usando el valor actual de i como n y manteniendo k = 2.
+#$i: obtiene el valor guardado actualmente en la variable i.
+done: termina el ciclo.
+> suma_table_k2.csv: guarda toda la salida en ese archivo, en lugar de mostrarla completa en la terminal.El símbolo >:Crea el archivo si todavía no existe. Reemplaza su contenido si ya existía. Guarda la salida completa del ciclo, no únicamente la última ejecución.
+
+
+# Para k = 2
+for i in $(seq 1 1000 65535); do ./my_test_suma $i 2; done > suma_table_k2.csv
+
+# Para k = 3
+for i in $(seq 1 1000 65535); do ./my_test_suma $i 3; done > suma_table_k3.csv
+
+# Para k = 10
+for i in $(seq 1 1000 65535); do ./my_test_suma $i 10; done > suma_table_k10.csv
+
+### WINDOWS CMD ###
+
+# Para k = 2
+for /L %i in (1,10,10000) do my_test_suma.exe %i 2 >> suma_table_k2.csv
+
+# Para k = 3
+for /L %i in (1,10,10000) do my_test_suma.exe %i 3 >> suma_table_k3.csv
+
+# Para k = 10
+for /L %i in (1,10,10000) do my_test_suma.exe %i 10 >> suma_table_k10.csv
+
+### WINDOWS POWERSHELL ###
+
+# Para k = 2
+for ($i=0; $i -le 10000; $i+=10) { .\my_test_suma.exe $i 2 >> suma_table_k2.csv }
+
+# Para k = 3
+for ($i=0; $i -le 10000; $i+=10) { .\my_test_suma.exe $i 3 >> suma_table_k3.csv }
+
+# Para k = 10
+for ($i=0; $i -le 10000; $i+=10) { .\my_test_suma.exe $i 10 >> suma_table_k10.csv }
+
+##########
+## Sort ##
+##########
+
+####################################################################################################
+## Compilacion ordenamiento de secuencia aleatoria ##
+
+g++ -std=c++17 sort_functions.cxx test_sort_random.cxx -o my_test_sort_random
+
+## Tabla de ejecucion ordenamiento de secuencia aleatoria ##
+
+## LINUX, MAC o REPL.IT ##
+for i in `seq 1000 400 20000`; do ./my_test_sort_random $i; done > sort_random_table.txt
+
+## WINDOWS CMD ##
+for /L %i in (1000,400,20000) do my_test_sort_random.exe %i >> sort_random_table.txt
+
+## WINDOWS POWERSHELL ##
+for ($i=1000; $i -le 20000; $i+=400) { .\my_test_sort_random.exe $i >> sort_random_table.txt }
+
+####################################################################################################
+## Compilacion ordenamiento de secuencia ordenada ##
+
+g++ -std=c++17 sort_functions.cxx test_sort_sorted.cxx -o my_test_sort_sorted
+
+## Tabla de ejecucion ordenamiento de secuencia invertida ##
+
+## LINUX, MAC o REPL.IT ##
+for i in `seq 1000 400 20000`; do ./my_test_sort_sorted $i; done > sort_sorted_table.txt
+
+## WINDOWS CMD ##
+for /L %i in (1000,400,20000) do my_test_sort_sorted.exe %i >> sort_sorted_table.txt
+
+## WINDOWS POWERSHELL ##
+for ($i=1000; $i -le 20000; $i+=400) { .\my_test_sort_sorted.exe $i >> sort_sorted_table.txt }
+
+####################################################################################################
+## Compilacion ordenamiento de secuencia invertida ##
+
+g++ -std=c++17 sort_functions.cxx test_sort_inverse.cxx -o my_test_sort_inverse
+
+## Tabla de ejecucion ordenamiento de secuencia ordenada ##
+
+## LINUX, MAC o REPL.IT ##
+for i in `seq 1000 400 20000`; do ./my_test_sort_inverse $i; done > sort_inverse_table.txt
+
+## WINDOWS CMD ##
+for /L %i in (1000,400,20000) do my_test_sort_inverse.exe %i >> sort_inverse_table.txt
+
+## WINDOWS POWERSHELL ##
+for ($i=1000; $i -le 20000; $i+=400) { .\my_test_sort_inverse.exe $i >> sort_inverse_table.txt }
