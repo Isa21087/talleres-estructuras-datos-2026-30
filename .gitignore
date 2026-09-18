@@ -1,0 +1,25 @@
+# Archivos compilados
+*.o
+*.out
+*.exe
+a.out
+
+# Ejecutables generados sin extension
+programa
+poke
+
+# Archivos temporales de Office
+~$*
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Visual Studio Code
+.vscode/
