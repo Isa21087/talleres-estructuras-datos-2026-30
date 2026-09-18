@@ -811,3 +811,11 @@ Cuando exista una contradicción, utilizar este orden:
 6. Sugerencias externas.
 
 Si todavía existe una duda, no asumir una regla sin confirmarla.
+
+### Talleres del primer corte
+
+La carpeta `talleres1corte/` contiene trabajos históricos ya finalizados.
+
+No debe modificarse, reorganizarse ni eliminarse. Se conserva únicamente como referencia y evidencia de los talleres realizados durante el primer corte.
+
+Cualquier cambio que afecte esta carpeta debe ser revisado por Isabella.
