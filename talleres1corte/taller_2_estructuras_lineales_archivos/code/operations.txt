@@ -1,0 +1,4 @@
+PRINT
+BATTLE Ash Johto Misty Cerulean
+COMPARE Ash Misty
+BATTLE Ash Johto Ash Kanto
