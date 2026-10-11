@@ -1,0 +1,15 @@
+add MMM500
+add GGG250
+add TTT750
+add DDD125
+add JJJ375
+add PPP625
+add WWW875
+add BBB060
+add FFF190
+add HHH310
+del BBB060
+del DDD125
+del GGG250
+del TTT750
+del MMM500
