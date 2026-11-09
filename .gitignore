@@ -23,3 +23,10 @@ desktop.ini
 
 # Visual Studio Code
 .vscode/
+
+# archivos generados del taller 4 de grafos
+/talleres3corte/taller_4_grafos_archivos/codigo/programa
+/talleres3corte/taller_4_grafos_archivos/codigo/pruebas/prueba_grafo
+/talleres3corte/taller_4_grafos_archivos/codigo/pruebas/prueba_lectura
+/talleres3corte/taller_4_grafos_archivos/codigo/detalle_recorrido.txt
+/talleres3corte/taller_4_grafos_archivos/codigo/resumen.txt

@@ -1,0 +1,5 @@
+1.0 0.2
+3
+Tierra 0 0 0 1.0 2 Miller Mann
+Miller 1 0 0 1.0 1 Tierra
+Mann 3 0 0 1.0 1 Tierra
