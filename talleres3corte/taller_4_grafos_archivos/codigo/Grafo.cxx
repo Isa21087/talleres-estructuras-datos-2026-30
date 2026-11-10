@@ -1,14 +1,17 @@
 
 #include "Grafo.h"
 
-Grafo::Grafo() {
+Grafo::Grafo()
+{
 }
 
-bool Grafo::agregarPlaneta(const Planeta& planeta) {
+bool Grafo::agregarPlaneta(const Planeta &planeta)
+{
     // verificamos que el planeta tenga nombre, un factor temporal
     // positivo y que no exista otro planeta con el mismo nombre
-    if (planeta.nombre.empty() || planeta.factorTemporal <= 0 ||
-        buscarPlaneta(planeta.nombre) != -1) {
+    if (planeta.obtenerNombre().empty() || planeta.obtenerFactorTemporal() <= 0 ||
+        buscarPlaneta(planeta.obtenerNombre()) != -1)
+    {
         return false;
     }
 
@@ -16,7 +19,8 @@ bool Grafo::agregarPlaneta(const Planeta& planeta) {
 
     // agregamos una columna a cada fila que ya existe porque
     // ahora hay un planeta más con el que se pueden conectar
-    for (int i = 0; i < (int)pesos.size(); i++) {
+    for (int i = 0; i < (int)pesos.size(); i++)
+    {
         pesos[i].push_back(0);
         peligrosas[i].push_back(false);
     }
@@ -30,15 +34,19 @@ bool Grafo::agregarPlaneta(const Planeta& planeta) {
     return true;
 }
 
-int Grafo::cantidadPlanetas() const {
+int Grafo::cantidadPlanetas() const
+{
     return planetas.size();
 }
 
-int Grafo::buscarPlaneta(const std::string& nombre) const {
+int Grafo::buscarPlaneta(const std::string &nombre) const
+{
     // buscamos el nombre y devolvemos su posición
     // esa posición también identifica al planeta en las matrices
-    for (int i = 0; i < (int)planetas.size(); i++) {
-        if (planetas[i].nombre == nombre) {
+    for (int i = 0; i < (int)planetas.size(); i++)
+    {
+        if (planetas[i].obtenerNombre() == nombre)
+        {
             return i;
         }
     }
@@ -46,27 +54,32 @@ int Grafo::buscarPlaneta(const std::string& nombre) const {
     return -1;
 }
 
-const Planeta& Grafo::obtenerPlaneta(int indice) const {
+const Planeta &Grafo::obtenerPlaneta(int indice) const
+{
     return planetas[indice];
 }
 
-void Grafo::establecerPeso(int origen, int destino, double peso) {
+void Grafo::establecerPeso(int origen, int destino, double peso)
+{
     // guardamos el mismo peso en ambas direcciones
     // porque las conexiones entre planetas son bidireccionales
     pesos[origen][destino] = peso;
     pesos[destino][origen] = peso;
 }
 
-double Grafo::obtenerPeso(int origen, int destino) const {
+double Grafo::obtenerPeso(int origen, int destino) const
+{
     return pesos[origen][destino];
 }
 
-void Grafo::marcarPeligrosa(int origen, int destino) {
+void Grafo::marcarPeligrosa(int origen, int destino)
+{
     // si una conexión es peligrosa de ida también lo es de vuelta
     peligrosas[origen][destino] = true;
     peligrosas[destino][origen] = true;
 }
 
-bool Grafo::esPeligrosa(int origen, int destino) const {
+bool Grafo::esPeligrosa(int origen, int destino) const
+{
     return peligrosas[origen][destino];
 }
