@@ -242,8 +242,7 @@ void SistemaExploracionLazaro::calcularCombustible()
     }
 }
 
-bool SistemaExploracionLazaro::realizarExploracion()
-{
+bool SistemaExploracionLazaro::realizarExploracion() {
     // la mision siempre debe comenzar en Tierra
     // buscamos su posicion para saber desde donde iniciar el recorrido
     int tierra = grafo.buscarPlaneta("Tierra");

@@ -7,9 +7,9 @@ Grafo::Grafo()
 
 bool Grafo::agregarPlaneta(const Planeta &planeta)
 {
-    // verificamos que el planeta tenga nombre, un factor temporal
-    // positivo y que no exista otro planeta con el mismo nombre
-    if (planeta.obtenerNombre().empty() || planeta.obtenerFactorTemporal() <= 0 ||
+    // verificamos que el planeta tenga nombre, que su factor temporal
+    // sea mayor o igual a uno y que no exista otro planeta con el mismo nombre
+    if (planeta.obtenerNombre().empty() || planeta.obtenerFactorTemporal() < 1 ||
         buscarPlaneta(planeta.obtenerNombre()) != -1)
     {
         return false;
